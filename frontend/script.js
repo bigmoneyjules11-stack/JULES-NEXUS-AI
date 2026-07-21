@@ -1,11 +1,38 @@
+// JULES NEXUS AI
+
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("JULES NEXUS AI Loaded");
 
-  const buttons = document.querySelectorAll("button");
+const cards = document.querySelectorAll(".feature-card, .platform-box, .glass-panel");
 
-  buttons.forEach(button => {
-    button.addEventListener("click", () => {
-      alert(button.textContent + " feature coming soon!");
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{
+threshold:0.15
+});
+
+cards.forEach(card=>{
+card.classList.add("hidden");
+observer.observe(card);
+});
+
+});
+
+// Smooth scrolling
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
     });
-  });
 });
