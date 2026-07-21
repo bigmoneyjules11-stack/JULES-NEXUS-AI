@@ -485,3 +485,801 @@ p{
     0 0 30px rgba(125,92,255,.45);
 
 }
+/*==========================================================
+  SECTION HEADERS
+==========================================================*/
+
+.section-header{
+
+    max-width:850px;
+
+    margin:0 auto 80px;
+
+    text-align:center;
+
+}
+
+.section-label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 24px;
+
+    margin-bottom:25px;
+
+    border-radius:999px;
+
+    color:var(--cyan);
+
+    background:rgba(0,232,255,.08);
+
+    border:1px solid rgba(0,232,255,.25);
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+
+}
+/*==========================================================
+  AI CAPABILITIES
+==========================================================*/
+
+.capability-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:35px;
+
+}
+
+.capability-card{
+
+    padding:40px;
+
+    transition:var(--transition);
+
+}
+
+.capability-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:rgba(0,232,255,.35);
+
+    box-shadow:
+        0 25px 70px rgba(0,232,255,.15);
+
+}
+
+.card-icon{
+
+    width:70px;
+
+    height:70px;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:2rem;
+
+    border-radius:20px;
+
+    margin-bottom:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(0,232,255,.2),
+        rgba(125,92,255,.2));
+
+}
+
+.capability-card h3{
+
+    margin-bottom:18px;
+
+    font-size:1.5rem;
+
+}
+/*==========================================================
+  MARKETPLACE
+==========================================================*/
+
+.market-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+.market-card{
+
+    padding:40px;
+
+    transition:var(--transition);
+
+}
+
+.market-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:rgba(125,92,255,.4);
+
+    box-shadow:
+        0 25px 70px rgba(125,92,255,.18);
+
+}
+
+.market-card h3{
+
+    margin-bottom:18px;
+
+    font-size:1.7rem;
+
+}
+/*==========================================================
+  BUSINESS TOOLKIT
+==========================================================*/
+
+.toolkit-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:28px;
+
+}
+
+.tool-card{
+
+    padding:35px;
+
+    text-align:center;
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.tool-card:hover{
+
+    transform:translateY(-10px);
+
+    background:rgba(255,255,255,.12);
+
+    box-shadow:
+        0 20px 60px rgba(0,232,255,.12);
+
+}
+/*==========================================================
+  MEMBERSHIPS
+==========================================================*/
+
+.membership-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+.membership-card{
+
+    padding:45px;
+
+    transition:var(--transition);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.membership-card:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.membership-card.featured{
+
+    border:1px solid rgba(0,232,255,.4);
+
+    box-shadow:
+        0 0 60px rgba(0,232,255,.2);
+
+}
+
+.membership-card h3{
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+}
+/*==========================================================
+  CONTACT
+==========================================================*/
+
+.contact{
+
+    text-align:center;
+
+}
+
+.contact .container{
+
+    max-width:900px;
+
+}
+
+.contact h2{
+
+    font-size:clamp(2.8rem,5vw,4.8rem);
+
+    margin-bottom:30px;
+
+}
+
+.contact p{
+
+    max-width:700px;
+
+    margin:0 auto 45px;
+
+}
+
+.contact .primary-button{
+
+    display:inline-flex;
+
+}
+/*==========================================================
+  FOOTER
+==========================================================*/
+
+.footer{
+
+    padding:50px 0;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    background:rgba(5,8,20,.85);
+
+}
+
+.footer .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.footer p{
+
+    color:rgba(255,255,255,.65);
+
+    font-size:.95rem;
+
+}
+/*==========================================================
+  BUTTON EFFECTS
+==========================================================*/
+
+.primary-button,
+.secondary-button,
+.launch-button,
+.nexus-button{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.primary-button::before,
+.launch-button::before,
+.nexus-button::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent);
+
+    transform:translateX(-120%);
+
+    transition:.8s;
+
+}
+
+.primary-button:hover::before,
+.launch-button:hover::before,
+.nexus-button:hover::before{
+
+    transform:translateX(120%);
+
+}
+
+.primary-button:hover,
+.secondary-button:hover{
+
+    transform:translateY(-5px);
+
+}
+/*==========================================================
+  ANIMATIONS
+==========================================================*/
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+@keyframes pulseGlow{
+
+    0%{
+
+        box-shadow:0 0 20px rgba(0,232,255,.2);
+
+    }
+
+    50%{
+
+        box-shadow:0 0 45px rgba(0,232,255,.45);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 20px rgba(0,232,255,.2);
+
+    }
+
+}
+
+.hero-badge{
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+.status-dot{
+
+    animation:pulseGlow 2s infinite;
+
+}
+/*==========================================================
+  PREMIUM GLOW
+==========================================================*/
+
+.hero-light{
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    top:-250px;
+
+    right:-180px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,232,255,.22),
+        transparent 70%);
+
+    filter:blur(70px);
+
+    pointer-events:none;
+
+}
+
+.glass:hover{
+
+    border-color:rgba(0,232,255,.3);
+
+    box-shadow:
+        0 30px 80px rgba(0,232,255,.12);
+
+}
+/*==========================================================
+  MOUSE LIGHT
+==========================================================*/
+
+.mouse-light{
+
+    position:fixed;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,232,255,.12),
+        transparent 70%);
+
+    filter:blur(45px);
+
+    transform:translate(-50%,-50%);
+
+    z-index:-1;
+
+    transition:
+        transform .08s linear,
+        opacity .35s ease;
+
+    opacity:.9;
+
+}
+/*==========================================================
+  SCROLL REVEAL
+==========================================================*/
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.fade-left{
+
+    opacity:0;
+
+    transform:translateX(-80px);
+
+    transition:1s;
+
+}
+
+.fade-left.active{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+.fade-right{
+
+    opacity:0;
+
+    transform:translateX(80px);
+
+    transition:1s;
+
+}
+
+.fade-right.active{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+/*==========================================================
+  UTILITIES
+==========================================================*/
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.flex{
+
+    display:flex;
+
+}
+
+.grid{
+
+    display:grid;
+
+}
+
+.space-between{
+
+    justify-content:space-between;
+
+}
+
+.align-center{
+
+    align-items:center;
+
+}
+
+.w-100{
+
+    width:100%;
+
+}
+
+.mt-40{
+
+    margin-top:40px;
+
+}
+
+.mb-40{
+
+    margin-bottom:40px;
+
+}
+
+.radius{
+
+    border-radius:var(--radius);
+
+}
+/*==========================================================
+  TABLET
+==========================================================*/
+
+@media (max-width:1100px){
+
+.hero-grid{
+
+    grid-template-columns:1fr;
+
+    gap:60px;
+
+}
+
+.navigation{
+
+    gap:20px;
+
+}
+
+.hero{
+
+    text-align:center;
+
+}
+
+.hero-buttons{
+
+    justify-content:center;
+
+}
+
+.nexus-panel{
+
+    max-width:650px;
+
+    margin:auto;
+
+}
+
+.section-header{
+
+    margin-bottom:60px;
+
+}
+
+}
+/*==========================================================
+  MOBILE
+==========================================================*/
+
+@media (max-width:768px){
+
+.header{
+
+    padding:18px 0;
+
+}
+
+.navigation{
+
+    display:none;
+
+}
+
+.hero{
+
+    padding-top:120px;
+
+}
+
+.hero h1{
+
+    font-size:3rem;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+}
+
+.primary-button,
+.secondary-button{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+.capability-grid,
+.market-grid,
+.toolkit-grid,
+.membership-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+section{
+
+    padding:90px 0;
+
+}
+
+}
+/*==========================================================
+  FINAL POLISH
+==========================================================*/
+
+::selection{
+
+    background:var(--cyan);
+
+    color:#04101d;
+
+}
+
+::-webkit-scrollbar{
+
+    width:12px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#08101f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+    linear-gradient(
+        180deg,
+        var(--cyan),
+        var(--purple));
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:
+    linear-gradient(
+        180deg,
+        var(--blue),
+        var(--cyan));
+
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0,232,255,.05), transparent 35%),
+        radial-gradient(circle at 80% 80%, rgba(125,92,255,.06), transparent 35%);
+
+    z-index:-2;
+
+}
+
+.section-header h2{
+
+    font-size:clamp(2.6rem,5vw,4.6rem);
+
+    margin-bottom:25px;
+
+}
+
+.section-header p{
+
+    font-size:1.1rem;
+
+    max-width:700px;
+
+    margin:auto;
+
+}
