@@ -438,3 +438,33 @@ font-size:24px;
 }
 
 }
+/* Color signatures for stream logging */
+.system-msg {
+  color: #8b949e;
+  margin-bottom: 8px;
+}
+
+.user-msg {
+  color: #58a6ff;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.agent-msg {
+  color: #7ee787;
+  margin-bottom: 8px;
+}
+
+/* Scrollbar styling for terminal display layout */
+.terminal-display::-webkit-scrollbar {
+  width: 6px;
+}
+
+.terminal-display::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.terminal-display::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 3px;
+}
