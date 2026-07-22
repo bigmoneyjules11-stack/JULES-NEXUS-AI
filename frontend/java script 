@@ -1,0 +1,92 @@
+// Append a log entry to the main terminal display
+function appendTerminalMsg(message, type = 'system') {
+  const displayLog = document.getElementById('display-log');
+  if (!displayLog) return;
+
+  const msgDiv = document.createElement('div');
+  
+  // Format prefix based on source type
+  let prefix = '> ';
+  if (type === 'user') prefix = 'USER: ';
+  if (type === 'agent') prefix = 'J.U.L.E.S: ';
+
+  msgDiv.className = `${type}-msg`;
+  msgDiv.textContent = `${prefix}${message}`;
+  
+  displayLog.appendChild(msgDiv);
+  displayLog.scrollTop = displayLog.scrollHeight; // Auto-scroll to latest event
+}
+
+// Add a newly spawned sub-agent node to the sidebar matrix
+function spawnSubAgent(name, specialization = 'General Task Agent') {
+  const roster = document.getElementById('roster');
+  if (!roster) return;
+
+  const agentId = `agent-${name.toLowerCase().replace(/\s+/g, '-')}`;
+  
+  // Check if agent already exists to prevent duplicate renders
+  if (document.getElementById(agentId)) {
+    appendTerminalMsg(`Sub-agent [${name}] already exists in active sub-matrix.`, 'system');
+    return;
+  }
+
+  const agentNode = document.createElement('div');
+  agentNode.className = 'agent-node';
+  agentNode.id = agentId;
+  
+  agentNode.innerHTML = `
+    <div class="node-header">
+      <span class="node-icon">🤖</span> <strong>${name}</strong>
+    </div>
+    <p>Specialization: ${specialization}. Status: Initialized & Syncing.</p>
+  </li>`;
+
+  roster.appendChild(agentNode);
+  appendTerminalMsg(`Sub-agent Matrix initialized for [${name}].`, 'system');
+}
+
+// Intercept interface actions and evaluate input commands
+function processNexusAction() {
+  const inputEl = document.getElementById('nexus-cmd-input');
+  if (!inputEl) return;
+
+  const rawCmd = inputEl.value.trim();
+  if (!rawCmd) return;
+
+  // Render user command immediately in terminal stream
+  appendTerminalMsg(rawCmd, 'user');
+  inputEl.value = ''; // Reset terminal prompt
+
+  // Simple command router regex (e.g., matching "Build sub-agent Gabriel")
+  const buildAgentMatch = rawCmd.match(/build\s+sub-agent\s+([a-zA-Z0-9_\-\s]+)/i);
+
+  if (buildAgentMatch) {
+    const agentName = buildAgentMatch[1].trim();
+    appendTerminalMsg(`Allocating shards for sub-agent: [${agentName}]...`, 'system');
+    
+    // Simulate minor network/processing lag before dynamic rendering
+    setTimeout(() => {
+      spawnSubAgent(agentName);
+    }, 8000);
+  } else {
+    // Normal streaming output fallback for non-structural commands
+    setTimeout(() => {
+      appendTerminalMsg(`Vocal stream command registered. Awaiting pipeline socket confirmation...`, 'agent');
+    }, 400);
+  }
+}
+
+// Global interface event bindings
+document.addEventListener('DOMContentLoaded', () => {
+  const cmdInput = document.getElementById('nexus-cmd-input');
+  
+  if (cmdInput) {
+    // Enable seamless submission using the Enter key
+    cmdInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        processNexusAction();
+      }
+    });
+  }
+});
