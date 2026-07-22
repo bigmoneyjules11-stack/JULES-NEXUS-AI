@@ -124,6 +124,35 @@ Watch Demo
 </div>
 
 </div>
+<!-- Integration Wrapper -->
+<div class="nexus-terminal-container">
+  <!-- Dashboard Panel: Sub-Agent Command Control -->
+  <div class="nexus-panel control-sidebar">
+    <h3 class="panel-title"><span class="pulse-dot"></span> Active Sub-Matrix</h3>
+    <div class="agent-roster" id="roster">
+      <div class="agent-node master-core">
+        <div class="node-header">
+          <span class="node-icon">🌀</span> <strong>J.U.L.E.S. Core</strong>
+        </div>
+        <p>Master Orchestrator. Status: Monitoring systems.</p>
+      </div>
+      <!-- User created agents render below dynamically -->
+    </div>
+  </div>
+
+  <!-- Active Stream: Conversational Matrix Interface -->
+  <div class="nexus-panel main-terminal">
+    <h3 class="panel-title">Vocal Stream Interface</h3>
+    <div class="terminal-display" id="display-log">
+      <div class="system-msg">> Nexus OS v2.5 Online. Persistent socket streaming initialization ready...</div>
+    </div>
+    <div class="terminal-input-bar">
+      <input type="text" id="nexus-cmd-input" placeholder="Initiate vocal protocol or type command (e.g. 'Build sub-agent Gabriel')...">
+      <button class="action-btn-neon" onclick="processNexusAction()">Transmit</button>
+    </div>
+  </div>
+</div>
+
 
 </section>
 
